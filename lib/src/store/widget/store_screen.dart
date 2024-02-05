@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_seminar/src/store/widget/hide_price_scope.dart';
+import 'package:flutter_widget_seminar/src/store/widget/product_grid_item.dart';
+import 'package:flutter_widget_seminar/src/store/widget/product_row_item.dart';
 
 import '../model/product.dart';
-import 'product_row_item.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
