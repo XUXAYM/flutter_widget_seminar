@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class StatefulCase extends StatefulWidget {
   final String text;
@@ -16,6 +17,7 @@ class _StatefulCaseState extends State<StatefulCase> {
   void initState() {
     super.initState();
     print('initState');
+
     _counter = 0;
   }
 
@@ -54,8 +56,11 @@ class _StatefulCaseState extends State<StatefulCase> {
           onPressed: _increment,
           child: const Text('Click'),
         ),
-        _Counter(count: _counter),
-        if (_counter < 10) const _Notification()
+        _Counter(count: 5),
+        if (_counter < 10)
+          _Notification(
+            key: UniqueKey(),
+          )
       ],
     );
   }
@@ -86,12 +91,18 @@ class _CounterState extends State<_Counter> {
 
 class _Notification extends StatefulWidget {
   const _Notification({super.key});
-
+  static int count = 0;
   @override
   State<_Notification> createState() => _NotificationState();
 }
 
 class _NotificationState extends State<_Notification> {
+  @override
+  void initState() {
+    super.initState();
+    print('Instanse ${++_Notification.count}');
+  }
+
   @override
   Widget build(BuildContext context) => ElevatedButton(
         onPressed: _onTap,

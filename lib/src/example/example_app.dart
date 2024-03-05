@@ -32,7 +32,7 @@ class _Home extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Example'),
         ),
-        body: switch (ExampleCase.stless) {
+        body: switch (ExampleCase.stful) {
           ExampleCase.stless => const StatelessCase(),
           ExampleCase.stful => const StatefulCase(text: 'StatefulWidget'),
           ExampleCase.inherited => const InheritedCase(),
